@@ -1,9 +1,15 @@
-/* answer <li> needs to look like a button */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none;
+}

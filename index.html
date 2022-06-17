@@ -8,16 +8,39 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+    <!-- header div with highscores link in left corner and timer in right corner -->
     <header>
       <ul>
-        <li><a href="./highscores.html">Highscores</a></li>
-        <li>Time:</li>
+        <li><a href="./highscores.html">View Highscores</a></li>
+        <li id="timer">Time: 60</li>
       </ul>
     </header>
-    <!-- header div with highscores link in left corner and timer in right corner -->
+    <main>
+      <h1>Coding Quiz Challenge</h1>
+      <p>Try to complete this really really difficult quiz that I made!</p>
+      <button id="start-quiz">Start Quiz</button>
+    </main>
+    <section id="quiz-box" class="hidden">
+      <h2>Question</h2>
+      <ul class="answers">
+        <li>Answer 1</li>
+        <li>Answer 2</li>
+        <li>Answer 3</li>
+        <li>Answer 4</li>
+      </ul>
+    </section>
+    <section id="end-screen" class="hidden">
+      <h1>The quiz is over.</h1>
+      <form>
+        <label for="initials">Enter your Initials</label>
+        <input type="text" id="initials" name="initials" maxlength="5" />
+        <button id="submit">Submit</button>
+      </form>
+    </section>
+
     <!-- dynamically render each answer within the question/answer section -->
     <!-- render a <span> underneath the qa section that says right/wrong -->
     <!-- end screen with form to enter name -->
-    <!-- highscores page -->
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
