@@ -8,16 +8,24 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <section>
-      <h1>Highscores</h1>
-      <a href="./index.html">
-        <button>Go Back</button>
-      </a>
-      <button id="clear-hs">Clear Highscores</button>
+    <section class="highscore-container">
+      <!-- title that says highscores -->
+      <h1>* Highscores *</h1>
+      <!-- unordered list to store highscores, alternate bg color nth child even/odd for styling -->
+      <ul class="scores">
+        <li>placeholder</li>
+        <li>placeholder</li>
+        <li>placeholder</li>
+        <li>placeholder</li>
+      </ul>
+      <!-- two buttonss, go back and clear hs -->
+      <div class="hs-buttons-container">
+        <a href="./index.html">
+          <button class="hs-buttons">Go Back</button>
+        </a>
+        <button class="hs-buttons" id="clear-hs">Clear Highscores</button>
+      </div>
     </section>
-    <!-- title that says highscores -->
-    <!-- two links, go back and clear hs -->
-    <!-- div with unordered list to store highscores, alternate bg color nth child even/odd for styling -->
     <script src="./assets/js/scores.js"></script>
   </body>
 </html>
