@@ -2,7 +2,6 @@ var timerEl = document.querySelector("#timer");
 var secondsLeft = 6;
 
 // BUTTONS
-var clearHSBtn = document.querySelector("#clear-hs");
 var startQuizBtn = document.querySelector("#start-quiz");
 var submitHSBtn = document.querySelector("#submit");
 
@@ -37,7 +36,17 @@ function submitHS(event) {
   event.preventDefault();
   window.location.href = "highscores.html";
 
-  localStorage.setItem("");
+  var hsInitials = document.querySelector("#hs-initials");
+  var saveInitials = hsInitials.value;
+
+  // when saving new HS to localstorage, need to retrieve previous value and store it in a temporary array, then push the new value to the end and repush it to localstorage
+
+  localStorage.setItem("highscores", saveInitials);
+}
+
+function clearHS() {
+  console.log("cleared");
+  localStorage.removeItem("highscores");
 }
 
 function endQuiz() {
