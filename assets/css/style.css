@@ -34,7 +34,6 @@ button {
   margin: 0 auto;
   padding: 0.2rem;
   width: fit-content;
-  /* border: 1px solid black; */
 }
 
 a {
@@ -45,7 +44,6 @@ a {
   display: none;
 }
 
-/* HIGHSCORES STYLING */
 .highscore-container,
 .title-container {
   display: flex;

@@ -1,10 +1,12 @@
+// TIMER ELEMENT AND STARTING TIME VARIABLE
 var timerEl = document.querySelector("#timer");
-var secondsLeft = 6;
+var secondsLeft = 1;
 
 // BUTTONS
 var startQuizBtn = document.querySelector("#start-quiz");
 var submitHSBtn = document.querySelector("#submit");
 
+// QUIZ CONTAINER ELEMENTS
 var titleScreen = document.querySelector("main");
 var quizBox = document.querySelector("#quiz-box");
 var endScreen = document.querySelector("#end-screen");
@@ -36,17 +38,23 @@ function submitHS(event) {
   event.preventDefault();
   window.location.href = "highscores.html";
 
+  // need to have an array available to parse and stringify the data since it's an array of objects we're storing in local storage, if local storage has data we will add on to it, if not then we will start with an empty array
+  var hsArray = JSON.parse(localStorage.getItem("highscores")) || [];
+
+  // grabbing the form element here to collect the user's initials
   var hsInitials = document.querySelector("#hs-initials");
   var saveInitials = hsInitials.value;
 
-  // when saving new HS to localstorage, need to retrieve previous value and store it in a temporary array, then push the new value to the end and repush it to localstorage
+  // object to save each new score
+  var newScore = {
+    score: secondsLeft,
+    initials: saveInitials,
+  };
 
-  localStorage.setItem("highscores", saveInitials);
-}
-
-function clearHS() {
-  console.log("cleared");
-  localStorage.removeItem("highscores");
+  // push the newScore to the array
+  hsArray.push(newScore);
+  // stringify and save the array to localstorage
+  localStorage.setItem("highscores", JSON.stringify(hsArray));
 }
 
 function endQuiz() {
