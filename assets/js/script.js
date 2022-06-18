@@ -1,6 +1,43 @@
+// QUESTION AND ANSWERS ARRAY
+var questionsAnswers = [
+  {
+    question: "What are my dogs' names?",
+    choices: ["Red + MJ", "Robby + Marge", "Rusty + MJ", "Rufus + McDonald"],
+    answer: "Red + MJ",
+  },
+  {
+    question: "What is my fiance's name?",
+    choices: ["Jayben", "Jason", "Jeremy", "Jacobie"],
+    answer: "Jayben",
+  },
+  {
+    question: "What is my favorite color?",
+    choices: ["Red", "Blue", "Purple", "Green"],
+    answer: "Green",
+  },
+  {
+    question: "What is my favorite activity?",
+    choices: ["Rollerblading", "Running", "Biking", "Rollerskating"],
+    answer: "Biking",
+  },
+  {
+    question: "How do I like my coffee?",
+    choices: [
+      "Iced with whipped cream",
+      "Strong + a splash of oatmilk",
+      "Black",
+      "Lots of half + half",
+    ],
+    answer: "Strong + a splash of oatmilk",
+  },
+];
+
+// STARTING POINT FOR US TO ITERATE THROUGH THE QUESTIONANSWERS ARRAY
+var arrayIndex = 0;
+
 // TIMER ELEMENT AND STARTING TIME VARIABLE
 var timerEl = document.querySelector("#timer");
-var secondsLeft = 1;
+var secondsLeft = 60;
 
 // BUTTONS
 var startQuizBtn = document.querySelector("#start-quiz");
@@ -16,8 +53,15 @@ function startQuiz() {
   titleScreen.setAttribute("class", "hidden");
   // display the quiz box
   quizBox.removeAttribute("class", "hidden");
+  showQuestions();
   // start the timer
-  startTimer();
+  // startTimer();
+}
+
+function showQuestions() {
+  var questionEl = document.querySelector("#question");
+
+  questionEl.textContent = questionsAnswers[arrayIndex].question;
 }
 
 function startTimer() {

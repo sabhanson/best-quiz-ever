@@ -4,9 +4,15 @@
   font-family: monospace;
 }
 
+header {
+  margin-bottom: 4rem;
+}
+
 h1 {
   text-align: center;
   font-size: 2.5rem;
+  max-width: 60%;
+  margin: 0 auto;
 }
 
 p {
@@ -22,7 +28,7 @@ ul {
   justify-content: space-between;
 }
 
-li {
+header > ul > li {
   padding: 0.3rem;
 }
 
@@ -40,18 +46,23 @@ a {
   text-decoration: none;
 }
 
-.hidden {
-  display: none;
-}
-
 .highscore-container,
-.title-container {
+.title-container,
+.quiz-box {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
   width: 60%;
   padding-top: 3rem;
+}
+
+.highscore-container {
+  margin-top: 4rem;
+}
+
+.hidden {
+  display: none;
 }
 
 .scores {
@@ -74,4 +85,19 @@ a {
 
 .hs-buttons {
   margin: 0.2rem;
+}
+
+.answers {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.answers > li {
+  text-align: center;
+}
+
+.answers > li > button {
+  margin: 0.4rem 0;
 }
