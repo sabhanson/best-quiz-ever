@@ -100,4 +100,5 @@ a {
 
 .answers > li > button {
   margin: 0.4rem 0;
+  width: 500px;
 }

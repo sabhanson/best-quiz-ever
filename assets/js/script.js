@@ -55,13 +55,26 @@ function startQuiz() {
   quizBox.removeAttribute("class", "hidden");
   showQuestions();
   // start the timer
-  // startTimer();
+  startTimer();
 }
 
 function showQuestions() {
   var questionEl = document.querySelector("#question");
 
   questionEl.textContent = questionsAnswers[arrayIndex].question;
+
+  for (let i = 0; i < questionsAnswers[arrayIndex].choices.length; i++) {
+    var liEl = document.createElement("li");
+    var buttonEl = document.createElement("button");
+
+    var answerText = questionsAnswers[arrayIndex].choices[i];
+
+    buttonEl.textContent = answerText;
+    var answerDiv = document.querySelector("#answers-container");
+
+    liEl.appendChild(buttonEl);
+    answerDiv.appendChild(liEl);
+  }
 }
 
 function startTimer() {
